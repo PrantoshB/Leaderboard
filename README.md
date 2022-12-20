@@ -1,5 +1,3 @@
-# To-Do List 🔖
-
 <div align="center">
 
   <img src="murple_logo.png" alt="logo" width="120"  height="auto"/>
