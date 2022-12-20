@@ -1,0 +1,51 @@
+body {
+  padding: 3%;
+}
+
+.recent-add {
+  display: flex;
+  margin: 5%;
+  justify-content: space-between;
+}
+
+.recent {
+  width: 40%;
+}
+
+.title-and-btn {
+  display: flex;
+  align-items: center;
+}
+
+#refresh {
+  height: 2rem;
+  width: 5rem;
+  margin-left: 2%;
+}
+
+.results {
+  border: 1px solid black;
+}
+
+.results p {
+  padding: 2%;
+  margin: 0;
+}
+
+.results p:nth-child(even) {
+  background: rgb(192, 192, 192);
+}
+
+.addscore {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: space-between;
+  height: 25vh;
+}
+
+#submit {
+  height: 2rem;
+  width: 5rem;
+  margin-left: auto;
+}
