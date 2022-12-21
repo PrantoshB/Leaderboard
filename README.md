@@ -31,7 +31,7 @@
 - Install Git.
 - Create a local directory that you want to clone the repository.
 - Open the command prompt in the created directory.
-- On the terminal run this command git clone https://github.com/PrantoshB/Leaderboard-.git
+- On the terminal run this command git clone https://github.com/PrantoshB/Leaderboard.git
 - Install the dev dependencies for linters run npm install.
 
 # Prerequisites:
@@ -49,7 +49,7 @@
 
 # Usage:
 ### To run the project, execute the following command:
-- git clone https://github.com/PrantoshB/Leaderboard-.git
+- git clone https://github.com/PrantoshB/Leaderboard.git
 - cd ToDo List
 
 # Run tests:
