@@ -24,8 +24,7 @@ Submit.addEventListener('click', () => {
     Name.value = '';
     Score.value = '';
     Message.style.display = 'none';
-  }
-  else {
+  } else {
     Message.style.display = 'block';
   }
 });
