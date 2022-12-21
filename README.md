@@ -2,7 +2,7 @@
 
   <img src="murple_logo.png" alt="logo" width="120"  height="auto"/>
   <br/>
- <h3>Leaderboard Project</h3>
+ <h2>Leaderboard Project</h2>
 </div>
 
 
@@ -12,6 +12,9 @@
 - HTML5. 
 - CSS3.
 - Javascript using ES6.
+
+# 🚀 Live Demo
+- You can see the Live Demo [Here](https://prantoshb.github.io/Leaderboard/)
 
 ### Client:
 - HTML.
