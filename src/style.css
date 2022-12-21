@@ -1,5 +1,15 @@
 body {
   padding: 3%;
+  background: url('../assets/leader-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+#main-title {
+  color: white;
+  text-align: center;
+  margin: 0;
 }
 
 .recent-add {
@@ -18,16 +28,22 @@ body {
   justify-content: space-between;
 }
 
-#refresh {
+#refresh,
+#submit {
   height: 2rem;
-  width: 5rem;
+  width: 40%;
   margin-left: 2%;
+  border: 0;
+  color: white;
+  background: rgb(255, 77, 74);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .results {
-  border: 1px solid black;
-  height: 35vh;
+  height: 50vh;
   overflow-y: scroll;
+  background: white;
 }
 
 .results::-webkit-scrollbar {
@@ -40,7 +56,9 @@ body {
 }
 
 .results p:nth-child(even) {
-  background: rgb(192, 192, 192);
+  background: rgb(67, 192, 134);
+  color: white;
+  font-size: 1rem;
 }
 
 .addscore {
@@ -52,10 +70,11 @@ body {
 .addscore input {
   margin: 3% 0;
   height: 10%;
+  padding-left: 2%;
+  border-radius: 5px;
+  border: 0;
 }
 
 #submit {
-  height: 2rem;
-  width: 5rem;
   margin: 3% 0 0 auto;
 }
