@@ -387,7 +387,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  font-family: sans-serif;\n}\n\n#main-title {\n  color: white;\n  text-align: center;\n  margin: 0;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 40%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh,\n#submit {\n  height: 2rem;\n  width: 40%;\n  margin-left: 2%;\n  border: 0;\n  color: white;\n  background: rgb(255, 77, 74);\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.results {\n  height: 50vh;\n  overflow-y: scroll;\n  background: white;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(67, 192, 134);\n  color: white;\n  font-size: 1rem;\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 30%;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n  padding-left: 2%;\n  border-radius: 5px;\n  border: 0;\n}\n\n#submit {\n  margin: 3% 0 0 auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  font-family: sans-serif;\n}\n\n#main-title {\n  color: white;\n  text-align: center;\n  margin: 0;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 45%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh,\n#submit {\n  height: 2rem;\n  width: 40%;\n  margin-left: 2%;\n  border: 0;\n  color: white;\n  background: rgb(255, 77, 74);\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.results {\n  height: 50vh;\n  overflow-y: scroll;\n  background: white;\n  border-radius: 5px;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(67, 192, 134);\n  color: white;\n  font-size: 1rem;\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 45%;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n  padding-left: 4%;\n  border-radius: 5px;\n  border: 0;\n  outline: none;\n}\n\n#submit {\n  margin: 3% 0 0 auto;\n}\n\n#alert {\n  color: rgb(192, 6, 6);\n  display: none;\n}\n\n@media only screen and (max-width: 768px) {\n  .recent-add {\n    flex-direction: column;\n  }\n\n  .recent,\n  .addscore {\n    width: 95%;\n    align-self: center;\n  }\n\n  input {\n    padding: 4%;\n  }\n\n  h2 {\n    color: whitesmoke;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -562,6 +562,7 @@ const getData = async () => {
 const Score = document.querySelector('.score');
 const Name = document.querySelector('.name');
 const Submit = document.querySelector('#submit');
+const Message = document.querySelector('#alert');
 
 const sendData = async () => {
   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores', {
@@ -579,9 +580,14 @@ const sendData = async () => {
 };
 
 Submit.addEventListener('click', () => {
-  sendData();
-  Name.value = '';
-  Score.value = '';
+  if (Name.value !== '' && Score.value !== '') {
+    sendData();
+    Name.value = '';
+    Score.value = '';
+    Message.style.display = 'none';
+  } else {
+    Message.style.display = 'block';
+  }
 });
 
 
