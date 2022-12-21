@@ -1,17 +1,35 @@
-"use strict";
 (self["webpackChunkwebpack"] = self["webpackChunkwebpack"] || []).push([[0],[
 /* 0 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_sendData_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
+
+
+const Result = document.querySelector('.results');
+const Refresh = document.querySelector('#refresh');
+
+Refresh.addEventListener('click', async () => {
+  const GameScores = await (0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Result.innerHTML = '';
+  GameScores.sort((a, b) => a.score - b.score).forEach((element) => {
+    Result.innerHTML += `
+        <p>${element.user}: ${element.score}</p>
+        `;
+  });
+});
 
 /***/ }),
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -62,6 +80,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* 2 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -171,6 +190,7 @@ module.exports = function (list, options) {
 /* 3 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -246,6 +266,7 @@ module.exports = domAPI;
 /* 4 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -290,6 +311,7 @@ module.exports = insertBySelector;
 /* 5 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -307,6 +329,7 @@ module.exports = setAttributesWithoutAttributes;
 /* 6 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -323,6 +346,7 @@ module.exports = insertStyleElement;
 /* 7 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -344,6 +368,7 @@ module.exports = styleTagTransform;
 /* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -357,7 +382,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    padding: 3%;\n}\n\n.recent-add {\n    display: flex;\n    margin: 5%;\n    justify-content: space-between;\n}\n\n.recent {\n    width: 40%;\n}\n\n.title-and-btn {\n    display: flex;\n    align-items: center;\n}\n\n#refresh {\n    height: 2rem;\n    width: 5rem;\n    margin-left: 2%;\n}\n\n.results {\n    border: 1px solid black;\n}\n\n.results p {\n    padding: 2%;\n    margin: 0;\n}\n\n.results p:nth-child(even) {\n    background: rgb(192, 192, 192);\n}\n\n.addscore {\n    display: flex;\n    flex-direction: column;\n    width: 30%;\n    justify-content: space-between;\n    height: 25vh;\n}\n\n#submit {\n    height: 2rem;\n    width: 5rem;\n    margin-left: auto;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 40%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh {\n  height: 2rem;\n  width: 5rem;\n  margin-left: 2%;\n}\n\n.results {\n  border: 1px solid black;\n  height: 35vh;\n  overflow-y: scroll;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(192, 192, 192);\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 30%;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n}\n\n#submit {\n  height: 2rem;\n  width: 5rem;\n  margin: 3% 0 0 auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -366,6 +391,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "body {\n    padding: 3%;\n}\n\n.recent
 /* 9 */
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (i) {
@@ -376,6 +402,7 @@ module.exports = function (i) {
 /* 10 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -461,6 +488,58 @@ module.exports = function (cssWithMappingToString) {
   };
   return list;
 };
+
+/***/ }),
+/* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Game with ID: BSY5VexV1P2xmQtZrGsn
+const getData = async () => {
+  try {
+    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores');
+    const data = await response.json();
+    return data.result;
+  } catch (error) {
+    return error;
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);
+
+/***/ }),
+/* 12 */
+/***/ (() => {
+
+const Score = document.querySelector('.score');
+const Name = document.querySelector('.name');
+const Submit = document.querySelector('#submit');
+
+const sendData = async () => {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user: Name.value,
+      score: Score.value,
+    }),
+  });
+  const data = await response.json();
+  return data;
+};
+
+Submit.addEventListener('click', () => {
+  sendData();
+  Name.value = '';
+  Score.value = '';
+});
+
 
 /***/ })
 ],
