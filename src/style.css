@@ -19,7 +19,7 @@ body {
 }
 
 .recent {
-  width: 40%;
+  width: 45%;
 }
 
 .title-and-btn {
@@ -44,6 +44,7 @@ body {
   height: 50vh;
   overflow-y: scroll;
   background: white;
+  border-radius: 5px;
 }
 
 .results::-webkit-scrollbar {
@@ -64,17 +65,49 @@ body {
 .addscore {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 45%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .addscore input {
   margin: 3% 0;
   height: 10%;
-  padding-left: 2%;
+  padding-left: 4%;
   border-radius: 5px;
   border: 0;
+  outline: none;
 }
 
 #submit {
   margin: 3% 0 0 auto;
+}
+
+#alert {
+  color: rgb(192, 6, 6);
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .recent-add {
+    flex-direction: column;
+  }
+
+  .recent,
+  .addscore {
+    width: 95%;
+    align-self: center;
+  }
+
+  input {
+    padding: 3%;
+  }
+
+  h2 {
+    color: whitesmoke;
+  }
 }
