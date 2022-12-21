@@ -10,7 +10,7 @@ Refresh.addEventListener('click', async () => {
   Result.innerHTML = '';
   GameScores.sort((a, b) => a.score - b.score).forEach((element) => {
     Result.innerHTML += `
-        <p>${element.user}: ${element.score}</p>
+        <p>🏆 ${element.user}: ${element.score}</p>
         `;
   });
 });

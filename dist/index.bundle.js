@@ -5,8 +5,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _modules_getData_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 /* harmony import */ var _modules_sendData_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_sendData_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -20,7 +20,7 @@ Refresh.addEventListener('click', async () => {
   Result.innerHTML = '';
   GameScores.sort((a, b) => a.score - b.score).forEach((element) => {
     Result.innerHTML += `
-        <p>${element.user}: ${element.score}</p>
+        <p>🏆 ${element.user}: ${element.score}</p>
         `;
   });
 });
@@ -377,12 +377,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(12), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 40%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh {\n  height: 2rem;\n  width: 5rem;\n  margin-left: 2%;\n}\n\n.results {\n  border: 1px solid black;\n  height: 35vh;\n  overflow-y: scroll;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(192, 192, 192);\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 30%;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n}\n\n#submit {\n  height: 2rem;\n  width: 5rem;\n  margin: 3% 0 0 auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  font-family: sans-serif;\n}\n\n#main-title {\n  color: white;\n  text-align: center;\n  margin: 0;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 40%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh,\n#submit {\n  height: 2rem;\n  width: 40%;\n  margin-left: 2%;\n  border: 0;\n  color: white;\n  background: rgb(255, 77, 74);\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.results {\n  height: 50vh;\n  overflow-y: scroll;\n  background: white;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(67, 192, 134);\n  color: white;\n  font-size: 1rem;\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 30%;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n  padding-left: 2%;\n  border-radius: 5px;\n  border: 0;\n}\n\n#submit {\n  margin: 3% 0 0 auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -491,6 +496,45 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 11 */
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+/* 12 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "cc731a80fad38901dab1.jpg";
+
+/***/ }),
+/* 13 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -512,7 +556,7 @@ const getData = async () => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (() => {
 
 const Score = document.querySelector('.score');
