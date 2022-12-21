@@ -53,7 +53,7 @@
 # Usage:
 ### To run the project, execute the following command:
 - git clone https://github.com/PrantoshB/Leaderboard.git
-- cd ToDo List
+- cd Leaderboard
 
 # Run tests:
 ### To run tests, run the following command:
