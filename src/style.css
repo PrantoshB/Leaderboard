@@ -15,6 +15,7 @@ body {
 .title-and-btn {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #refresh {
@@ -25,6 +26,12 @@ body {
 
 .results {
   border: 1px solid black;
+  height: 35vh;
+  overflow-y: scroll;
+}
+
+.results::-webkit-scrollbar {
+  display: none;
 }
 
 .results p {
@@ -40,12 +47,15 @@ body {
   display: flex;
   flex-direction: column;
   width: 30%;
-  justify-content: space-between;
-  height: 25vh;
+}
+
+.addscore input {
+  margin: 3% 0;
+  height: 10%;
 }
 
 #submit {
   height: 2rem;
   width: 5rem;
-  margin-left: auto;
+  margin: 3% 0 0 auto;
 }
