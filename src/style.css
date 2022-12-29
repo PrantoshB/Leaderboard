@@ -4,6 +4,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif;
+  background-position: top;
+}
+
+h2 {
+  color: white;
 }
 
 #main-title {
@@ -30,14 +35,15 @@ body {
 
 #refresh,
 #submit {
-  height: 2rem;
+  height: 2.5rem;
   width: 40%;
   margin-left: 2%;
   border: 0;
   color: white;
-  background: rgb(255, 77, 74);
+  background: rgb(255 35 35);
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .results {
@@ -56,8 +62,14 @@ body {
   margin: 0;
 }
 
+#loader {
+  width: 40%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
 .results p:nth-child(even) {
-  background: rgb(67, 192, 134);
+  background: rgb(10 10 72);
   color: white;
   font-size: 1rem;
 }
@@ -65,7 +77,8 @@ body {
 .addscore {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 30%;
+  margin-right: 10%;
 }
 
 input::-webkit-outer-spin-button,
@@ -88,11 +101,15 @@ input::-webkit-inner-spin-button {
 }
 
 #alert {
-  color: rgb(192, 6, 6);
+  color: rgb(250, 250, 250);
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    padding: 5% 0;
+  }
+
   .recent-add {
     flex-direction: column;
   }
@@ -101,6 +118,7 @@ input::-webkit-inner-spin-button {
   .addscore {
     width: 95%;
     align-self: center;
+    margin-right: 0;
   }
 
   input {
@@ -109,5 +127,11 @@ input::-webkit-inner-spin-button {
 
   h2 {
     color: whitesmoke;
+  }
+
+  #loader {
+    width: 70%;
+    margin-left: 10%;
+    margin-top: 30%;
   }
 }

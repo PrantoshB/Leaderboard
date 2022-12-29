@@ -4,7 +4,7 @@ const Submit = document.querySelector('#submit');
 const Message = document.querySelector('#alert');
 
 const sendData = async () => {
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores', {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/VQIBei2p1cwYT56nrvbe/scores', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,5 +26,18 @@ Submit.addEventListener('click', () => {
     Message.style.display = 'none';
   } else {
     Message.style.display = 'block';
+  }
+});
+
+Name.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.altKey) {
+    e.preventDefault();
+  } else {
+    const key = e.keyCode;
+    if (!((key === 8) || (key === 9) || (key === 32)
+      || (key === 46) || (key >= 35 && key <= 40)
+      || (key >= 65 && key <= 90))) {
+      e.preventDefault();
+    }
   }
 });
