@@ -16,14 +16,27 @@ const Result = document.querySelector('.results');
 const Refresh = document.querySelector('#refresh');
 
 Refresh.addEventListener('click', async () => {
+  Result.innerHTML = `<img id="loader"
+  src="https://media2.giphy.com/media/l3nWhI38IWDofyDrW/giphy.gif"
+  alt="progress">`;
   const GameScores = await (0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Result.innerHTML = '';
-  GameScores.sort((a, b) => a.score - b.score).forEach((element) => {
+  GameScores.sort((a, b) => b.score - a.score).forEach((element) => {
     Result.innerHTML += `
-        <p>🏆 ${element.user}: ${element.score}</p>
-        `;
+          <p>🏆 ${element.user}: ${element.score}</p>
+          `;
   });
 });
+
+window.onload = async () => {
+  const GameScores = await (0,_modules_getData_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Result.innerHTML = '';
+  GameScores.sort((a, b) => b.score - a.score).forEach((element) => {
+    Result.innerHTML += `
+          <p>🏆 ${element.user}: ${element.score}</p>
+          `;
+  });
+};
 
 /***/ }),
 /* 1 */
@@ -387,7 +400,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  padding: 3%;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  font-family: sans-serif;\n}\n\n#main-title {\n  color: white;\n  text-align: center;\n  margin: 0;\n}\n\n.recent-add {\n  display: flex;\n  margin: 5%;\n  justify-content: space-between;\n}\n\n.recent {\n  width: 45%;\n}\n\n.title-and-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n#refresh,\n#submit {\n  height: 2rem;\n  width: 40%;\n  margin-left: 2%;\n  border: 0;\n  color: white;\n  background: rgb(255, 77, 74);\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.results {\n  height: 50vh;\n  overflow-y: scroll;\n  background: white;\n  border-radius: 5px;\n}\n\n.results::-webkit-scrollbar {\n  display: none;\n}\n\n.results p {\n  padding: 2%;\n  margin: 0;\n}\n\n.results p:nth-child(even) {\n  background: rgb(67, 192, 134);\n  color: white;\n  font-size: 1rem;\n}\n\n.addscore {\n  display: flex;\n  flex-direction: column;\n  width: 45%;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.addscore input {\n  margin: 3% 0;\n  height: 10%;\n  padding-left: 4%;\n  border-radius: 5px;\n  border: 0;\n  outline: none;\n}\n\n#submit {\n  margin: 3% 0 0 auto;\n}\n\n#alert {\n  color: rgb(192, 6, 6);\n  display: none;\n}\n\n@media only screen and (max-width: 768px) {\n  .recent-add {\n    flex-direction: column;\n  }\n\n  .recent,\n  .addscore {\n    width: 95%;\n    align-self: center;\n  }\n\n  input {\n    padding: 4%;\n  }\n\n  h2 {\n    color: whitesmoke;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  padding: 3%;\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  font-family: sans-serif;\r\n  background-position: top;\r\n}\r\n\r\n\r\nh2 {\r\n  color: white;\r\n}\r\n\r\n#main-title {\r\n  color: white;\r\n  text-align: center;\r\n  margin: 0;\r\n}\r\n\r\n.recent-add {\r\n  display: flex;\r\n  margin: 5%;\r\n  justify-content: space-between;\r\n}\r\n\r\n.recent {\r\n  width: 45%;\r\n}\r\n\r\n.title-and-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n#refresh,\r\n#submit {\r\n  height: 2.5rem;\r\n  width: 40%;\r\n  margin-left: 2%;\r\n  border: 0;\r\n  color: white;\r\n  background: rgb(255 35 35);\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  font-size: 1rem;\r\n}\r\n\r\n.results {\r\n  height: 50vh;\r\n  overflow-y: scroll;\r\n  background: white;\r\n  border-radius: 5px;\r\n}\r\n\r\n.results::-webkit-scrollbar {\r\n  display: none;\r\n}\r\n\r\n.results p {\r\n  padding: 2%;\r\n  margin: 0;\r\n}\r\n\r\n#loader {\r\n  width: 40%;\r\n  margin-left: 25%;\r\n  margin-top: 5%;\r\n}\r\n\r\n.results p:nth-child(even) {\r\n  background: rgb(10 10 72);\r\n  color: white;\r\n  font-size: 1rem;\r\n}\r\n\r\n.addscore {\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 30%;\r\n  margin-right: 10%;\r\n}\r\n\r\ninput::-webkit-outer-spin-button,\r\ninput::-webkit-inner-spin-button {\r\n  -webkit-appearance: none;\r\n  margin: 0;\r\n}\r\n\r\n.addscore input {\r\n  margin: 3% 0;\r\n  height: 10%;\r\n  padding-left: 4%;\r\n  border-radius: 5px;\r\n  border: 0;\r\n  outline: none;\r\n}\r\n\r\n#submit {\r\n  margin: 3% 0 0 auto;\r\n}\r\n\r\n#alert {\r\n  color: rgb(250, 250, 250);\r\n  display: none;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n\r\n  body {\r\n    padding: 5% 0;\r\n  }\r\n\r\n  .recent-add {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .recent,\r\n  .addscore {\r\n    width: 95%;\r\n    align-self: center;\r\n    margin-right: 0;\r\n  }\r\n\r\n  input {\r\n    padding: 3%;\r\n  }\r\n\r\n  h2 {\r\n    color: whitesmoke;\r\n  }\r\n\r\n  #loader {\r\n    width: 70%;\r\n    margin-left: 10%;\r\n    margin-top: 30%;\r\n  }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -531,7 +544,7 @@ module.exports = function (url, options) {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "cc731a80fad38901dab1.jpg";
+module.exports = __webpack_require__.p + "41c765215090ba144524.jpg";
 
 /***/ }),
 /* 13 */
@@ -542,10 +555,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-// Game with ID: BSY5VexV1P2xmQtZrGsn
+// Game with ID: VQIBei2p1cwYT56nrvbe
 const getData = async () => {
   try {
-    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores');
+    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/VQIBei2p1cwYT56nrvbe/scores');
     const data = await response.json();
     return data.result;
   } catch (error) {
@@ -565,7 +578,7 @@ const Submit = document.querySelector('#submit');
 const Message = document.querySelector('#alert');
 
 const sendData = async () => {
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BSY5VexV1P2xmQtZrGsn/scores', {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/VQIBei2p1cwYT56nrvbe/scores', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -587,6 +600,19 @@ Submit.addEventListener('click', () => {
     Message.style.display = 'none';
   } else {
     Message.style.display = 'block';
+  }
+});
+
+Name.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.altKey) {
+    e.preventDefault();
+  } else {
+    const key = e.keyCode;
+    if (!((key === 8) || (key === 9) || (key === 32)
+      || (key === 46) || (key >= 35 && key <= 40)
+      || (key >= 65 && key <= 90))) {
+      e.preventDefault();
+    }
   }
 });
 
